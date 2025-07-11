@@ -182,7 +182,7 @@ async fn main() -> Result<()> {
                     .map(|c| {
                         let short_date = c.date.split_once('T').map_or(&c.date[..], |(d, _)| d);
                         format!(
-                            "Коэффициент: <b>{}</b>\nСтоимость: <b>{}</b>\nДата: <b>{}</b>",
+                            "Коэффициент: <b>{}</b>\nСтоимость: <b>{}</b>\nДата: <b>{}</b>\n",
                             c.coefficient, c.cost, short_date
                         )
                     })
@@ -198,7 +198,7 @@ async fn main() -> Result<()> {
                 }]);
             }
 
-            let _ = b.write(&message, Some(&reply_markup));
+            let _ = b.write(&message, Some(&reply_markup)).await;
         }
     }
 
