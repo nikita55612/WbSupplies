@@ -167,7 +167,7 @@ async fn main() -> Result<()> {
 
         // Отправка уведомления через телеграм-бота
         if let Some(ref b) = bot {
-            let mut message = String::from("🔊 <b><i>Обновление поставок</b></i>\n\n");
+            let mut message = String::from("🔊 <b><i>Обновление поставок</i></b>\n\n");
             let mut reply_markup = Vec::with_capacity(urls.len());
 
             for ((url, v), warehouse) in urls
