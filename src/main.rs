@@ -72,7 +72,6 @@ async fn startup() -> Result<&'static Config> {
             let _ = page
                 .evaluate(r#"alert("Выполните вход в личный кабинет")"#)
                 .await;
-            let _ = page.close().await;
         });
 
         println!("Ожидание входа в личный кабинет. Не закрывайте окно браузера");
