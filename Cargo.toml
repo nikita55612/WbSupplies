@@ -1,0 +1,25 @@
+[package]
+name = "WbSupplies"
+version = "0.1.0"
+edition = "2024"
+
+[profile.release]
+opt-level = "z"         # или "3" для производительности, "z" для минимального размера
+lto = true              # link-time optimization
+codegen-units = 1       # улучшает оптимизацию, но замедляет сборку
+panic = "abort"         # уменьшает размер бинарника
+strip = true            # убирает символы отладки (начиная с Rust 1.73+)
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+tokio-stream = "0.1"
+# teloxide = { git = "https://github.com/teloxide/teloxide.git", features = ["macros"] }
+chromiumoxide = { git = "https://github.com/mattsse/chromiumoxide", features = ["tokio-runtime"], default-features = false, branch = "main"}
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.9"
+thiserror = "2"
+rand = "0.9"
+chrono = "0.4"
+open = "5"

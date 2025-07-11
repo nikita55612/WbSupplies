@@ -1,0 +1,5 @@
+/target
+/user_data
+/extension
+Cargo.lock
+Config.toml
